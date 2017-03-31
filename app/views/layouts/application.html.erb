@@ -9,6 +9,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <% if user_signed_in? %>
+      <%= render "layouts/navbar" %> 
+    <% end %>
+
+    <main class="container">
+    <div class="row">
+      <div class="col">
+        <%= render "layouts/flash" %> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= yield %>
+      </div>
+    </div>
+    </main>
   </body>
 </html>
