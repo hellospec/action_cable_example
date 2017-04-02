@@ -5,13 +5,8 @@ class CommentsController < ApplicationController
     @comment = find_comment
     @comment.user_id = current_user.id
 
-    #unless comment.save
-    #  flash["danger"] = "Problem: #{comment.errors.full_messages}"
-    #end
-    #redirect_to discussion_path(discussion_id)
-
     if @comment.save
-      ActionCable.server.broadcast "comment_channel", 
+      ActionCable.server.broadcast "comment_channel_#{@comment.discussion_id}", 
         content: render_comment
     end
   end
