@@ -6,4 +6,9 @@ class User < ApplicationRecord
 
   has_many :comments
   has_many :discussions, through: :comments
+
+  def username
+    email.match /(.+)@/
+    $1
+  end
 end

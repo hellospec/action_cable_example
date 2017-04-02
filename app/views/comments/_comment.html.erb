@@ -1,0 +1,13 @@
+<div class="comment">
+  <div class="comment-body">
+    <p><%= comment.content %></p>
+  </div>
+  <div class="comment-info">
+    <div class="commenter">
+      <%= comment.user.username %>
+    </div>
+    <div class="datetime">
+      <span><%= comment.created_at.localtime.strftime("%e %b %y %l:%M %p") %></span>
+    </div>
+  </div>
+</div>

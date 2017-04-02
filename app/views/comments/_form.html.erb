@@ -1,0 +1,6 @@
+<div class="new-comment">
+  <%= simple_form_for [discussion, discussion.comments.build] do |f| %>
+    <%= f.input :content, label: "New Comment", as: :text, input_html: { rows: "3" } %>
+    <%= f.button :submit, value: "Send" %>
+  <% end %>
+</div>

@@ -1,5 +1,4 @@
 class DiscussionsController < ApplicationController
-  #before_action :authenticate_user!, except: [:index, :show]
   before_action :authenticate_user! 
 
   def index
@@ -8,6 +7,10 @@ class DiscussionsController < ApplicationController
 
   def new
     @discussion = Discussion.new
+  end
+
+  def show
+    find_discussion
   end
 
   def create
@@ -24,5 +27,9 @@ class DiscussionsController < ApplicationController
   private
   def discussion_params
     params.require(:discussion).permit(:topic)
+  end
+
+  def find_discussion
+    @discussion = Discussion.find(params[:id])
   end
 end

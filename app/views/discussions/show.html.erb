@@ -1,0 +1,7 @@
+<div class="topic-head" data-discussion-id="<%= @discussion.id %>">
+  <h1 class="topic-title"><%= @discussion.topic %></h1>
+</div>
+
+<%= render template: "comments/index", locals: { comments: @discussion.comments } %>
+
+<%= render partial: "comments/form", locals: { discussion: @discussion} %>
