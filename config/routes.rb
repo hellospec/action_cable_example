@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   end
 
   root "discussions#index"
+
+  mount ActionCable.server, at: "/cable"
 end

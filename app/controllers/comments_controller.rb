@@ -2,13 +2,18 @@ class CommentsController < ApplicationController
   before_action :authenticate_user!
 
   def create
-    comment = find_comment
-    comment.user_id = current_user.id
+    @comment = find_comment
+    @comment.user_id = current_user.id
 
-    unless comment.save
-      flash["danger"] = "Problem: #{comment.errors.full_messages}"
+    #unless comment.save
+    #  flash["danger"] = "Problem: #{comment.errors.full_messages}"
+    #end
+    #redirect_to discussion_path(discussion_id)
+
+    if @comment.save
+      ActionCable.server.broadcast "comment_channel", 
+        content: render_comment
     end
-    redirect_to discussion_path(discussion_id)
   end
 
   private
@@ -22,5 +27,9 @@ class CommentsController < ApplicationController
 
   def find_comment
     Discussion.find(discussion_id).comments.new(comment_params)
+  end
+
+  def render_comment
+    render partial: "comments/comment", locals: { comment: @comment }
   end
 end

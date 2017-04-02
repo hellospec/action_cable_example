@@ -1,11 +1,11 @@
 <h1>All Discussions</h1>
 
-<div class="table discussions">
-  <div class="tbody">
+<table class="table discussions">
+  <tbody>
   <% @discussions.each do |d| %>
     <tr>
       <td><%= link_to d.topic, d %></td>
     </tr>
   <% end %>
-  </div>
-</div>
+  </tbody>
+</table>
