@@ -1,24 +1,3 @@
-# README
+เว็บแอพตัวอย่างใน repository นี้ใช้เพื่ออธิบายประกอบกับบทความเรื่อง [ทดลองใช้ Action Cable ในเว็บ Hellospec.com]() 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+แอพตัวอย่างที่ยกมานี้เป็นแอพสำหรับแลกเปลี่ยนความคิดเห็นเกี่ยวกับหัวข้อสนทนาที่ผู้ใช้สนใจ โดยผู้ใช้ที่ล็อคอินเข้ามา สามารถเลือกหัวข้อสนทนา (Discussion) ที่ตัวเองสนใจและสามารถพิมพ์ข้อความคอมเม้นลงไป โดยคอมเม้นที่พิมพ์ลงไปนั้นจะโชว์บนหน้า Discussion ผู้ใช้ที่เปิดหน้า Discussion เดียวกันก็จะเห็นคอมเม้นของผู้ใช้คนอื่นในแบบ real time โดยไม่ต้อง refresh หน้าเบราเซอร์ การทำงานจะคล้ายๆ กับระบบ chatroom นั่นเอง
